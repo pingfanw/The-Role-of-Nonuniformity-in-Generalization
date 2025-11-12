@@ -1,14 +1,6 @@
 # Numerical Experiments of Paper "Beyond Sharpness: The Role of Nonuniformity in Generalization".
 This implementation includes consistent sharpness-aware minimization and kroncker factor approximate variance algroithms across Imagenet, CIFAR10/100, Mnist and food101 datasets.
 
----
-
-# The Role of Nonuniformity in Generalization
-
-**Numerical Experiments for the Paper “Beyond Sharpness: The Role of Nonuniformity in Generalization”**
-
----
-
 ## 1. Motivation and Background
 
 Understanding why deep neural networks generalize well, even when trained to near-zero training error, remains a fundamental open question in deep learning theory.
@@ -23,7 +15,6 @@ This project explores a complementary dimension—**nonuniformity**—as a key f
 Here, *nonuniformity* broadly refers to the uneven distribution of important quantities (e.g., gradients, parameter updates, per-sample losses, or class-wise statistics) during optimization.
 The accompanying paper hypothesizes that lower nonuniformity in the training dynamics correlates with better generalization, even when sharpness levels remain similar.
 
----
 
 ## 2. Repository Structure
 
@@ -32,7 +23,6 @@ The accompanying paper hypothesizes that lower nonuniformity in the training dyn
 * **`optimizer/`** – Optimizers including *SGD*, *Adam*, *SAM (Sharpness-Aware Minimization)*, and the proposed *Nonuniformity-Aware* variants.
 * **`utils/`** – Utility scripts for dataset loading, metric computation, visualization, and logging.
 
----
 
 ## 3. Installation
 
@@ -46,7 +36,6 @@ pip install torch torchvision tqdm numpy matplotlib
 
 For mixed precision or distributed training, you may additionally require NVIDIA Apex or `torch.distributed`.
 
----
 
 ## 4. Running Experiments
 
@@ -74,7 +63,6 @@ python main.py \
 | `--measure_nonuniformity`          | Enables computation and logging of nonuniformity metrics.                 |
 | `--save_dir`                       | Directory for saving logs and checkpoints.                                |
 
----
 
 ## 5. Metrics and Core Concepts
 
@@ -96,7 +84,6 @@ Examples:
 Tracks parameter or gradient variance across iterations and its correlation with test error.
 Together with nonuniformity, these quantities reveal how optimization dynamics shape generalization.
 
----
 
 ## 6. Expected Observations
 
@@ -107,7 +94,6 @@ Empirical findings (consistent with the associated paper):
 * Models with *lower nonuniformity* generalize better even at similar sharpness levels.
 * Optimizers that implicitly reduce nonuniformity (e.g., SAM, adaptive SAM variants) yield improved test accuracy.
 
----
 
 ## 7. Visualization and Logging
 
@@ -125,7 +111,6 @@ Example visualization (to be generated with `utils/plot_utils.py`):
 python utils/plot_utils.py --logdir ./exp_nonuniformity
 ```
 
----
 
 ## 8. Citation
 
@@ -140,12 +125,7 @@ If you use or build upon this repository, please cite:
 }
 ```
 
----
 
 ## 9. License
 
 This repository is released under the **MIT License**.
-
----
-
-Would you like me to generate a **version with GitHub badges (build status, Python version, license, citation)** and a **conda environment.yml** so that the README looks fully production-ready?
